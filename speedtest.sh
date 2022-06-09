@@ -7,13 +7,14 @@ eecho(){
 randsleep(){
     sleep 0.$[$RANDOM%5+5]
 }
-echo "Retrieving speedtest.net configuration..."
+
 geoip="$(curl -ks https://api.ip.sb/geoip -A Mozilla)"
 asn_organization="$(echo "$geoip"|grep -o "asn_organization.*"|cut -d \" -f 3)"
 ip="$(echo "$geoip"|grep -o "ip.*"|cut -d \" -f 3)"
 country="$(echo "$geoip"|grep -o "country.*"|cut -d \" -f 3)"
 
 clear
+eecho "Retrieving speedtest.net configuration..."
 eecho "Testing from ${asn_organization} (${ip})..."
 eecho "Retrieving speedtest.net server list..."
 eecho "Selecting best server based on ping..."
