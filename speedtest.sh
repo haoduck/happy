@@ -5,7 +5,7 @@ eecho(){
     echo -e "$*"
 }
 randsleep(){
-    sleep 0.$[$RANDOM%5+5]
+    sleep 0.$[$RANDOM%5+3]
 }
 
 geoip="$(curl -ks https://api.ip.sb/geoip -A Mozilla)"
@@ -24,6 +24,6 @@ eecho "Testing download speed\c"
 for i in {1..100};do eecho ".\c";done;echo
 eecho "Download: $[$RANDOM%200+900] Mbit/s"
 eecho "Testing upload speed\c"
-for i in {1..100};do eecho ".\c";done;echo
+for i in {1..60};do eecho ".\c";done;echo
 eecho "Upload: $[$RANDOM%400+500] Mbit/s"
 eecho "Share your speedtest: https://dabendan.pages.dev/?testid=$[$RANDOM%50000+10000]"
