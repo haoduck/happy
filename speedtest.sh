@@ -19,7 +19,7 @@ eecho "Testing from ${asn_organization} (${ip})..."
 eecho "Retrieving speedtest.net server list..."
 eecho "Selecting best server based on ping..."
 sleep 2
-eecho "Hosted by ${country} [$[$RANDOM%5].$[$RANDOM%20+20] km]: $[$RANDOM%5].$[$RANDOM%200+100] ms"
+eecho "Hosted by ${country} [$[$RANDOM%5].$[$RANDOM%20+20] km]: $[$RANDOM%5+1].$[$RANDOM%200+100] ms"
 eecho "Testing download speed\c"
 for i in {1..100};do eecho ".\c";done;echo
 eecho "Download: $[$RANDOM%600+900] Mbit/s"
